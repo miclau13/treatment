@@ -21,6 +21,8 @@ app.post('/upload_file', db.uploadFile);
 app.post('/import_data', db.importData);
 
 if (process.env.NODE_ENV === 'production') {
+  console.log("path.join(__dirname, '../frontend/build')",path.join(__dirname, '../frontend/build'))
+  console.log("path.join(__dirname, '../frontend/build', 'index.html')",path.join(__dirname, '../frontend/build', 'index.html'))
   // Serve any static files
   app.use(express.static(path.join(__dirname, '../frontend/build')));
   // Handle React routing, return all requests to React app
