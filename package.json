@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "yarn install",
-    "start": "concurrently \"cd ./frontend && npm start\" \"cd ./backend && npm start\""
+    "prestart:dev": "yarn install",
+    "start:dev": "concurrently \"cd ./frontend && npm start\" \"cd ./backend && npm start\""
   },
   "author": "",
   "license": "ISC",
