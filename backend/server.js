@@ -20,7 +20,7 @@ app.get('/users', db.getUsersByFirstName);
 app.post('/upload_file', db.uploadFile);
 app.post('/import_data', db.importData);
 
-if (process.env.NODE_ENV === 'production') {
+// if (process.env.NODE_ENV === 'production') {
   console.log("path.join(__dirname, '../frontend/build')",path.join(__dirname, '../frontend/build'))
   console.log("path.join(__dirname, '../frontend/build', 'index.html')",path.join(__dirname, '../frontend/build', 'index.html'))
   // Serve any static files
@@ -29,7 +29,7 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', function(req, res) {
     res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
   });
-};
+// };
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
