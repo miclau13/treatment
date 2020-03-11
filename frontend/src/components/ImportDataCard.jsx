@@ -32,12 +32,12 @@ export default function ImportDataCard() {
       },
       responseType: 'blob'
     });  
-    const url = window.URL.createObjectURL(new Blob([response.data]));
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', 'import_after_treatment.csv');
-    document.body.appendChild(link);
-    link.click();
+    // const url = window.URL.createObjectURL(new Blob([response.data]));
+    // const link = document.createElement('a');
+    // link.href = url;
+    // link.setAttribute('download', 'import_after_treatment.csv');
+    // document.body.appendChild(link);
+    // link.click();
     setLoading(false);
   };
   return (

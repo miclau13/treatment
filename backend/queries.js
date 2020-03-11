@@ -17,7 +17,6 @@ const stringify = require('csv-stringify');
 
 const getUsersByFirstName = (req, response) => {
   const firstName = req.query.firstname;
-  console.error("getUsersByFirstName", firstName)
   pool.query(`SELECT * FROM public.ref_firstnames WHERE label like '${firstName}%' ORDER BY label ASC `, (error, results) => {
     if (error) {
       console.error("error", error)
@@ -107,7 +106,7 @@ const importData = (req, res) => {
   let incomingData = [];
   form.parse(req, function(err, fields, files) {
     fs.createReadStream(files.file.path)
-      .pipe(csv({delimiter: ';'}))
+      .pipe(csv({delimiter: ','}))
       .on('data', function(data){
           try {
             //perform the operation
@@ -136,7 +135,7 @@ const importData = (req, res) => {
           return [data[0], type, gender, data[2]]
         })
         let query = format('INSERT INTO public.ref_firstnames (label, type, gender, origin) VALUES %L returning id', values);
-        res.status(200)
+        res.status(200).json("Done");
           pool.query(query, (error, results) => {
             if (error) {
               console.error("error", error)

@@ -4,12 +4,12 @@
   "description": "exercise",
   "main": "index.js",
   "scripts": {
+    "build": "cd ./frontend && npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart:dev": "yarn install",
     "server": "cd ./backend && npm run server",
-    "start:dev": "concurrently \"cd ./frontend && npm start\" \"cd ./backend && npm start\"",
-    "start": "cd ./backend && npm start",
-    "poststart": "cd ./frontend && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "start:dev": "concurrently \"cd ./frontend && npm start\" \"cd ./backend && npm run server\"",
+    "start": "cd ./backend && npm start"
   },
   "author": "",
   "license": "ISC",
