@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "prestart:dev": "yarn install",
-    "start:dev": "concurrently \"cd ./frontend && npm start\" \"cd ./backend && npm start\""
+    "server": "cd ./backend && npm run mon",
+    "start:dev": "concurrently \"cd ./frontend && npm start\" \"cd ./backend && npm start\"",
+    "start": "cd ./backend && npm start",
+    "heroku-postbuild": "cd ./frontend && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "author": "",
   "license": "ISC",

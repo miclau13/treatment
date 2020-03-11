@@ -17,11 +17,13 @@ const stringify = require('csv-stringify');
 
 const getUsersByFirstName = (req, response) => {
   const firstName = req.query.firstname;
+  console.error("getUsersByFirstName", firstName)
   pool.query(`SELECT * FROM public.ref_firstnames WHERE label like '${firstName}%' ORDER BY label ASC `, (error, results) => {
     if (error) {
       console.error("error", error)
       throw error
     }
+    // console.error("results", results)
     response.status(200).json(results.rows)
   })
 };

@@ -26,7 +26,7 @@ export default function ImportDataCard() {
     let formData = new FormData();
     formData.append("file", fileInputRef.current.files[0]);
     setLoading(true);
-    const response = await axios.post(`http://localhost:5000/import_data`, formData, {
+    const response = await axios.post(`/import_data`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       },

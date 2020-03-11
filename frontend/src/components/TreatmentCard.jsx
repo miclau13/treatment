@@ -28,7 +28,7 @@ export default function TreatmentCard() {
     let formData = new FormData();
     formData.append("file", fileInputRef.current.files[0]);
     setLoading(true);
-    const response = await axios.post(`http://localhost:5000/upload_file`, formData, {
+    const response = await axios.post(`/upload_file`, formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       },

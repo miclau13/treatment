@@ -49,7 +49,7 @@ export default function SearchCard() {
   const onSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const result = await axios.get(`http://localhost:5000/users?firstname=${input}`);
+    const result = await axios.get(`/users?firstname=${input}`);
     setLoading(false);
     setData(result.data) 
   };
